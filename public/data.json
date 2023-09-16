@@ -1,0 +1,66 @@
+[
+    {
+      "image": "https://i.ibb.co/t81jkq2/Introduction-to-Programming.jpg",
+      "course_name": "Introduction to Programming",
+      "credit": 3,
+      "price": 49.99,
+      "course_details": "Learn the fundamentals of programming with this introductory course."
+    },
+    {
+      "image": "https://i.ibb.co/K6LcJvw/Web-Development-Fundamentals.jpg",
+      "course_name": "Web Development",
+      "credit": 4,
+      "price": 79.99,
+      "course_details": "Build a strong foundation in web development and create your first website."
+    },
+    {
+      "image": "https://i.ibb.co/W0Tj2XT/Data-Science-Essentials.jpg",
+      "course_name": "Data Science Essentials",
+      "credit": 5,
+      "price": 99.99,
+      "course_details": "Discover the essential concepts and tools used in data science."
+    },
+    {
+      "image": "https://i.ibb.co/pR4rQjP/Machine-Learning.jpg",
+      "course_name": "Machine Learning Mastery",
+      "credit": 4,
+      "price": 129.99,
+      "course_details": "Become proficient in machine learning algorithms and applications."
+    },
+    {
+      "image": "https://i.ibb.co/zsTRNpm/Digital-Marketing-Strategies.jpg",
+      "course_name": "Digital Marketing Strategies",
+      "credit": 3,
+      "price": 69.99,
+      "course_details": "Learn effective digital marketing strategies for business growth."
+    },
+    {
+      "image": "https://i.ibb.co/Sn0nLzh/Graphic-Design.jpg",
+      "course_name": "Graphic Design Basics",
+      "credit": 2,
+      "price": 59.99,
+      "course_details": "Explore the principles of graphic design and visual communication."
+    },
+    {
+      "image": "https://i.ibb.co/BZMW0tP/Financial-Management.jpg",
+      "course_name": "Financial Management",
+      "credit": 4,
+      "price": 89.99,
+      "course_details": "Master financial management strategies for personal and business success."
+    },
+    {
+      "image": "https://i.ibb.co/WD03bfT/Photography-Fundamentals.jpg",
+      "course_name": "Photography Fundamentals",
+      "credit": 2,
+      "price": 49.99,
+      "course_details": "Capture stunning photos with a solid understanding of photography basics."
+    },
+    {
+      "image": "https://i.ibb.co/fkjHWtj/Ethical-Hacking-Techniques.jpg",
+      "course_name": "Ethical Hacking Techniques",
+      "credit": 3,
+      "price": 79.99,
+      "course_details": "Learn ethical hacking methods to strengthen cybersecurity defenses."
+    }
+  ]
+  
