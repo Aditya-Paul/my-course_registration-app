@@ -3,12 +3,17 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookOpen ,faDollarSign } from '@fortawesome/free-solid-svg-icons'
+import Cart from '../Cart/Cart';
 
 
 const Home = () => {
 
     // use State
     const [courses, setcourse] = useState([])
+    const [selectedCourse, setselectedCourse] = useState([])
+    const [totalCredit, settotalCredit] = useState(0)
+    const [totalPrice, settotalPrice] = useState(0)
+    const [Remaining, setRemaining] = useState(0)
 
     // useEffect
     useEffect(()=>{
@@ -19,18 +24,40 @@ const Home = () => {
 
     // handleclick
     const handleSelet = (course) =>{
-        console.log(course)
+        const isExist = selectedCourse.find((Element) => Element.course_name == course.course_name)
+
+        let count_credit = course.credit
+        let Course_price = course.price
+
+        if(isExist){
+            return alert('eta ache')
+        }
+        else{
+            selectedCourse.forEach((item)=>{
+                count_credit = count_credit + item.credit
+                Course_price = Course_price + item.price
+            })
+            if(count_credit>20){
+                return alert('20 credit er beshi nile jamela ache')
+            }
+            let remaining = 20 - totalCredit
+            setRemaining(remaining)
+            settotalPrice(Course_price)
+            settotalCredit(count_credit)
+            setselectedCourse([...selectedCourse,course])
+        }
+        console.log(typeof(course.credit))
     }
 
 
     return (
-        <div className='container mt-[48px]'>
+        <div className='container mt-[48px] flex gap-4 mx-auto'>
 
             {/* Card container */}
-            <div className="card_container grid grid-cols-3 ">
+            <div className="card_container grid grid-cols-3  gap-3">
                 {
                     courses.map(course =>(
-                        <div className="card  p-[16px] w-[312px] h-[400px] rounded-lg gap-2 flex flex-col items-center justify-center text-left bg-white">
+                        <div className="card mb-[24px] p-[10px] w-[312px] h-[400px] rounded-lg gap-2 flex flex-col items-center justify-center text-left bg-white">
                             <img className='mt-[12px] w-[250px] h-[140px] rounded-lg' src={course.image} alt="" />
 
                             <div className='flex flex-col gap-2'>
@@ -60,28 +87,8 @@ const Home = () => {
             </div>
 
             {/* Cart container */}
-            <div className="cart_container">
-                <div>
-                    <p>Credit Hour Remaining <span>7</span> hr</p>
-                </div>
-                <hr />
-
-                <div>
-                    <h1>Course Name</h1>
-                    <div>
-
-                    </div>
-                </div>
-                <hr />
-                
-                <div>
-                    <p>Total Credit Hour : <span>13</span></p>
-                </div>
-                <hr />
-
-                <div>
-                    <p>Total Price : <span>0</span> USD</p>
-                </div>
+            <div>
+                <Cart selectedCourse={selectedCourse} totalCredit={totalCredit} totalPrice={totalPrice} Remaining = {Remaining}></Cart>
             </div>
         </div>
     );
