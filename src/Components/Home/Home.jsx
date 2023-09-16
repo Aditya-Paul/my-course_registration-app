@@ -28,6 +28,7 @@ const Home = () => {
 
         let count_credit = course.credit
         let Course_price = course.price
+        
 
         if(isExist){
             return alert('eta ache')
@@ -40,7 +41,7 @@ const Home = () => {
             if(count_credit>20){
                 return alert('20 credit er beshi nile jamela ache')
             }
-            let remaining = 20 - totalCredit
+            let remaining = 20 - count_credit
             setRemaining(remaining)
             settotalPrice(Course_price)
             settotalCredit(count_credit)
