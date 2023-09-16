@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookOpen ,faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import Cart from '../Cart/Cart';
+import Swal from 'sweetalert2';
 
 
 const Home = () => {
@@ -31,21 +32,36 @@ const Home = () => {
         
 
         if(isExist){
-            return alert('eta ache')
+            return Swal.fire({
+                text: 'You already select the course ',
+                icon: 'success', // You can change the icon
+              });
         }
         else{
             selectedCourse.forEach((item)=>{
                 count_credit = count_credit + item.credit
                 Course_price = Course_price + item.price
             })
+            const remaining = 20 - count_credit
+
             if(count_credit>20){
-                return alert('20 credit er beshi nile jamela ache')
+                Swal.fire({
+                    text: 'You can not purcase more then 20 credit couse',
+                    icon: 'success', // You can change the icon
+                  }); 
             }
-            let remaining = 20 - count_credit
-            setRemaining(remaining)
-            settotalPrice(Course_price)
-            settotalCredit(count_credit)
-            setselectedCourse([...selectedCourse,course])
+            // else if(remaining<0){
+            //     Swal.fire({
+            //         text: 'You can not purcase any cousr because of you are out of credit',
+            //         icon: 'success', // You can change the icon
+            //       });
+            // }
+            else{
+                setRemaining(remaining)
+                settotalPrice(Course_price)
+                settotalCredit(count_credit)
+                setselectedCourse([...selectedCourse,course])
+            }
         }
         console.log(typeof(course.credit))
     }

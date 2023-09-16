@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <div className=' text-6xl font-medium text-center mt-5 text-slate-800 bg-[#F3F3F3]'>
+      <div className=' text-6xl font-medium text-center pt-[40px] pb-[35px] text-slate-800 bg-[#F3F3F3]'>
         <h1>Course Registration</h1>
         <Home></Home>
       </div>
