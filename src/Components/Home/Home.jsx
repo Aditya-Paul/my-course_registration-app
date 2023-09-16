@@ -47,15 +47,15 @@ const Home = () => {
             if(count_credit>20){
                 Swal.fire({
                     text: 'You can not purcase more then 20 credit couse',
-                    icon: 'success', // You can change the icon
+                    icon: 'success', 
                   }); 
             }
-            // else if(remaining<0){
-            //     Swal.fire({
-            //         text: 'You can not purcase any cousr because of you are out of credit',
-            //         icon: 'success', // You can change the icon
-            //       });
-            // }
+            else if(remaining<0){
+                Swal.fire({
+                    text: 'You can not purcase any couse because of you are out of credit',
+                    icon: 'success',
+                  });
+            }
             else{
                 setRemaining(remaining)
                 settotalPrice(Course_price)
@@ -71,10 +71,10 @@ const Home = () => {
         <div className='container mt-[48px] flex gap-4 mx-auto'>
 
             {/* Card container */}
-            <div className="card_container grid grid-cols-3  gap-3">
+            <div className="card_container grid grid-cols-3 gap-[15px]">
                 {
                     courses.map(course =>(
-                        <div className="card mb-[24px] p-[10px] w-[312px] h-[400px] rounded-lg gap-2 flex flex-col items-center justify-center text-left bg-white">
+                        <div className="card p-[10px] w-[312px] h-[400px] rounded-lg gap-2 flex flex-col items-center justify-center text-left bg-white">
                             <img className='mt-[12px] w-[250px] h-[140px] rounded-lg' src={course.image} alt="" />
 
                             <div className='flex flex-col gap-2'>
